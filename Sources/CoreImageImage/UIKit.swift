@@ -17,8 +17,9 @@ public func LoadFromURL(url: URL) -> Result<CIImage, Error> {
     }
     
     guard let ciImage = im.ciImage else {
-        return .failure(Errors.cgImage)
+        return .failure(Errors.ciImage)
     }
+    
     return .success(ciImage)
 }
 
