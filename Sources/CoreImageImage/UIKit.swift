@@ -22,4 +22,16 @@ public func LoadFromURL(url: URL) -> Result<CIImage, Error> {
     return .success(ciImage)
 }
 
+public func AsPNGData(image: CIImage) -> Result<Data, Error> {
+    
+    let ui_im = UIImage.init(ciImage: image)
+    
+    guard let png_data = ui_im.pngData() else {
+        return .failure(Errors.pngData)
+    }
+    
+    return .success(png_data)
+}
+
+
 #endif
