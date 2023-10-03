@@ -17,7 +17,7 @@ if case .success(let ci_image) = im_rsp {
 
 ## Motivation
 
-SFO Museum often writes tools in Swift that we would like to run in both a MacOS (`AppKit`) and iOS (`UIKit`) contexts. Because each respective framework has its own image type (`NSImage` and `UIImage` respectively) and each framework is specific to their respective platform this can result in a lot of fiddly-code when cross-compiling applications.
+SFO Museum often writes tools in Swift that we would like to run in both a MacOS (`AppKit`) and iOS (`UIKit`) contexts. Because each framework has its own image type (`NSImage` and `UIImage` respectively) and each framework is specific to their respective platform this can result in a lot of fiddly-code when cross-compiling applications.
 
 This package provides a single method (`LoadFromURL`) which accepts a `URL` instance and returns a CoreImage `CIImage` instance for the image at that location, regardless of platform.
 
